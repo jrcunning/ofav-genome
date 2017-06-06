@@ -1,0 +1,9 @@
+ofav.maker.output/*
+!ofav.maker.output/ofav.all.maker.proteins.renamed.function.fasta
+!ofav.maker.output/ofav.all.maker.transcripts.renamed.function.fasta
+
+busco/run_ofav/*
+!busco/run_ofav/short_summary_ofav.txt
+
+data/*
+snap/*
