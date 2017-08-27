@@ -7,3 +7,6 @@ busco/run_ofav/*
 
 data/*
 snap/*
+
+gag_out/*
+!gag_out/genome.stats
