@@ -2,7 +2,7 @@ all: gag_out/genome.stats
 
 # Generate annotation statistics using GAG
 gag_out/genome.stats: ofav.maker.output/ofav.all.renamed.function.gff
-	python ~/local/GAG/gag.py --fasta data/filter/ofav.fasta --gff ofav.maker.output/ofav.all.gff --fix_start_stop --out gag_out
+	python ~/local/GAG/gag.py --fasta data/ofav_genome.fa --gff ofav.maker.output/ofav.all.gff --fix_start_stop --out gag_out
 
 # Add putative gene function annotations
 ofav.maker.output/ofav.all.renamed.function.gff: ofav.maker.output/blastp.output.renamed
@@ -55,6 +55,12 @@ busco/run_ofav/short_summary_ofav.txt: data/ofav_genome.fa
 	cd /scratch/projects/crf/ofav-genome/busco && \
 	python ~/local/busco/BUSCO.py -f -c 96 --long -i ../data/ofav_genome.fa -o ofav -l ~/local/busco/metazoa_odb9 -m geno
 
+# Generate contigs and summarize fasta files
+data/contigs.fasta.summary: data/ofav_genome.fa
+	cat data/ofav_genome.fa | seqkit fx2tab | cut -f 2 | sed -r 's/n+/\n/gi' | cat -n | seqkit tab2fx | seqkit replace -p "(.+)" -r "Contig{nr}" > data/contigs.fasta
+	fasta_tool --nt_count --summary data/ofav_genome.fa > data/ofav_genome.fa.summary
+	fasta_tool --nt_count --summary data/contigs.fasta > data/contigs.fasta.summary
+
 # Reformat names of scaffolds in Orbicella genome
-data/ofav_genome: data/48498_ref_ofav_dov_v1_unplaced.fa
+data/ofav_genome.fa: data/48498_ref_ofav_dov_v1_unplaced.fa
 	sed 's/\ .*$//' data/48498_ref_ofav_dov_v1_unplaced.fa > data/ofav_genome.fa
