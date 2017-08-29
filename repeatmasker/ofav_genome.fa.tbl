@@ -1,0 +1,51 @@
+==================================================
+file name: ofav_genome.fa           
+sequences:          1932
+total length:  485532801 bp  (356005621 bp excl N/X-runs)
+GC level:         38.99 %
+bases masked:  112309487 bp ( 23.13 %)
+==================================================
+               number of      length   percentage
+               elements*    occupied  of sequence
+--------------------------------------------------
+SINEs:            33999      5338921 bp    1.10 %
+      ALUs            0            0 bp    0.00 %
+      MIRs        18081      3255139 bp    0.67 %
+
+LINEs:            23197      4856953 bp    1.00 %
+      LINE1        1444       627704 bp    0.13 %
+      LINE2        6238      1141125 bp    0.24 %
+      L3/CR1        792       134488 bp    0.03 %
+
+LTR elements:     13594      3634283 bp    0.75 %
+      ERVL            0            0 bp    0.00 %
+      ERVL-MaLRs      0            0 bp    0.00 %
+      ERV_classI     79        17095 bp    0.00 %
+      ERV_classII     0            0 bp    0.00 %
+
+DNA elements:    139968     26414485 bp    5.44 %
+     hAT-Charlie      0            0 bp    0.00 %
+     TcMar-Tigger   860       124253 bp    0.03 %
+
+Unclassified:    379074     66411777 bp   13.68 %
+
+Total interspersed repeats:106656419 bp   21.97 %
+
+
+Small RNA:         3217      1054158 bp    0.22 %
+
+Satellites:        1613       369388 bp    0.08 %
+Simple repeats:   80245      4307108 bp    0.89 %
+Low complexity:    9832       501076 bp    0.10 %
+==================================================
+
+* most repeats fragmented by insertions or deletions
+  have been counted as one element
+                                                      
+
+The query species was assumed to be homo          
+RepeatMasker Combined Database: Dfam_Consensus-20170127, RepBase-20170127
+        
+run with rmblastn version 2.2.27+
+The query was compared to classified sequences in "consensi.fa.classified"
+

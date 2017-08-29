@@ -10,3 +10,7 @@ snap/*
 
 gag_out/*
 !gag_out/genome.stats
+
+repeatmasker/*
+!repeatmasker/ofav_genome.fa.tbl
+!repeatmasker/consensi.fa.classified
